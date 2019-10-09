@@ -9,10 +9,15 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+
+
     <!-- Scripts -->
-    <script src="{{ asset('./js/app.js') }}" defer></script>
+
+    <!-- 
+    <script src="{{ Config::get('app.url')}}/node_modules/select2/dist/js/select2.min.js"></script> -->
 
     <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -79,5 +84,28 @@
             @yield('content')
         </main>
     </div>
+
+    <footer>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+        <script src="{{ asset('./js/app.js') }}" defer></script>
+
+
+        <script type="text/javascript">
+            $('.tag_select').select2();
+            $('.edit_tag_select').select2({
+                tags: true,
+                tokenSeparators: [',', ' ']
+        
+
+            });
+        </script>
+
+    </footer>
+
+  
+  
+
 </body>
 </html>
